@@ -1,0 +1,18 @@
+    html, body {
+      height: 100%;
+    }
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .custom-card {
+      border-radius: 10px;
+      width: 500px;
+      height: 625px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      padding: 10px; 
+    }
+    .custom-card a{
+        margin-top: 5px;
+    }

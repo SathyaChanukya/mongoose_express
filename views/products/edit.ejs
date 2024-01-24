@@ -1,0 +1,134 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Centered Form</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    html, body {
+      height: 100%;
+    }
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .custom{
+        border-radius: 100px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container d-flex justify-content-center ">
+    <form class="shadow-lg p-4 mb-5 bg-body-tertiary rounded-lg">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" class="form-control" id="username" placeholder="Enter username">
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="password" placeholder="Password">
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Product</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    /* Custom CSS for a specific element */
+    html, body {
+      height: 100%;
+    }
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .custom-card {
+      border-radius: 10px;
+      width: 500px;
+      height: 585px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      padding: 10px;
+      
+    }
+  </style>
+</head>
+<body>
+  <div class="container d-flex justify-content-center">
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="custom-card">
+            <h1>Edit Product</h1>
+            <hr>
+    <form action="/products/<%=product._id%>?_method=PUT" method="POST">
+      <div class="form-group">
+        <label for="name"><b>Name</b></label>
+        <input type="text" class="form-control" id="name"value="<%=product.name%>" required>
+      </div>
+      <div class="form-group">
+        <label for="price"><b>Price</b></label>
+        <input type="number" class="form-control" id="price" value="<%=product.price%>" required>
+      </div>
+      <div class="form-group">
+        <label for="category"><b>Category</b></label>
+        <select name="category" id="category" class="form-control" required>
+        <% for(let c of categories){ %>
+        <option value="<%=c%>" <%=product.category===c?'selected':''%>><%=c%></option>
+        <%}%>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="description"><b>Description</b></label>
+        <textarea id="description"name="description" class="form-control" cols="30" rows="5" required><%=product.description%></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Save</button>
+    </form>
+  </div></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Product</title>
+</head>
+<body>
+<h1>Edit Product</h1>
+<form action="/products/<%=product._id%>?_method=PUT" method="POST" >
+<label for="name">Product Name</label>
+<input type="text" name="name" id="name" placeholder="product Name" value='<%=product.name%>'required>
+<br>
+<label for="price">Product Price</label>
+<input type="text" name="price" id="price" placeholder="product Price" value="<%=product.price%>"required>
+<br>
+<label for="category">Product Category</label>
+<select name="category" id="category">
+<% for(let c of categories){ %>
+<option value="<%=c%>" <%=product.category===c?'selected':''%>><%=c%></option>
+<%}%>
+</select>
+<br>
+<label for="texta">Product description</label>
+<textarea id="texta"name="description" class="form-control" cols="30" rows="5" required><%=product.description%></textarea>
+<br>
+<button>Submit</button>
+</form>
+<a href="/products"><button>All Products</button></a>
+</body>
+</html> -->
